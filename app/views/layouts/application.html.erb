@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Library</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand mx-2" href="#">Library</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse d-flex flex-row-reverse mx-3" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">  
+            <a class="nav-link text-white" href="#">Livros Disponiveis</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Sair</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <%= yield %>
+   <footer class="footer mt-auto py-3">
+      <div class="container">
+        <span class="text-muted">Coloque o conteúdo do sticky footer aqui.</span>
+      </div>
+    </footer>
+  </body>
+</html>
