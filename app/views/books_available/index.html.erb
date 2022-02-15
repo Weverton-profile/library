@@ -10,7 +10,7 @@
                     <div class="card-body">
                         <h5 class="card-title"><%= book.book_name %></h5>
                         <a href="#" class="btn btn-success text-white">Emprestimo</a>
-                        <%= link_to 'Detalhes', "#", class:"btn btn-success text-white" %>
+                        <%= link_to 'Detalhes', "/show_book/show/#{book.id}", class:"btn btn-success text-white" %>
                     </div>
                 </div>
             </div>

@@ -1,9 +1,9 @@
 class BooksController < ApplicationController
+  before_action :authenticate_admin!
   before_action :set_book, only: %i[ show edit update destroy ]
   layout "application"
   # GET /books or /books.json
   def index
-    # before_action :authenticate_admin!
     @books = Book.all.page(params[:page]).per(9)
   end
 
