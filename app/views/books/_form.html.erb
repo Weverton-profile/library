@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :book_name %>
+  <div class="field mt-2">
+    <%= form.label :Nome %>
     <%= form.text_field :book_name %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
+  <div class="field mt-2">
+    <%= form.label :Descrição %>
     <%= form.text_field :description %>
   </div>
 
-  <div class="field">
-    <%= form.label :url_image %>
+  <div class="fieldl mt-2">
+    <%= form.label :Imagem %>
     <%= form.text_field :url_image %>
   </div>
 
-  <div class="field">
-    <%= form.label :rating %>
+  <div class="field mt-2">
+    <%= form.label :Nota %>
     <%= form.number_field :rating %>
   </div>
 
-  <div class="actions">
+  <div class="actions mt-2">
     <%= form.submit %>
   </div>
 <% end %>
