@@ -1,27 +1,12 @@
 <div class="container mt-5 py-5">
-  <p id="notice"><%= notice %></p>
+  <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+    <div class="card-body d-flex flex-column align-items-start">
+      <strong class="d-inline-block mb-2 text-primary"><%= @book.book_name %></strong>
+      <p class="card-text mb-auto"><%= @book.description %></p>
+    </div>
+    <%= image_tag @book.url_image, class:"card-img-right flex-auto d-none d-lg-block", width:200, height:250 %>
+  </div>
 
-  <p>
-    <strong>Nome:</strong>
-    <%= @book.book_name %>
-  </p>
-
-  <p>
-    <strong>Descrição:</strong>
-    <%= @book.description %>
-  </p>
-
-  <p>
-    <strong>Imagem:</strong>
-    <%= image_tag @book.url_image, width: 80, height: 100 %>
-  </p>
-
-  <% if admin_signed_in?  %>
-    <%= link_to 'Editar', edit_book_path(@book), class:"btn btn-warning text-white" %> |
-    <%= link_to 'Voltar', books_path, class:"btn btn-primary text-white" %>
-  <% end %>
-  <% if student_signed_in?  %>
-    <%= link_to 'Emprestimo', books_available_index_path, class:"btn btn-success text-white" %> |
-    <%= link_to 'Voltar', books_available_index_path, class:"btn btn-primary text-white" %>
-  <% end %>  
+  <%= link_to 'Emprestimo', books_available_index_path, class:"btn btn-success text-white" %> |
+  <%= link_to 'Voltar', books_available_index_path, class:"btn btn-primary text-white" %>  
 </div>

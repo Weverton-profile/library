@@ -16,12 +16,6 @@
     <%= image_tag @book.url_image, width: 80, height: 100 %>
   </p>
 
-  <% if admin_signed_in?  %>
-    <%= link_to 'Editar', edit_book_path(@book), class:"btn btn-warning text-white" %> |
-    <%= link_to 'Voltar', books_path, class:"btn btn-primary text-white" %>
-  <% end %>
-  <% if student_signed_in?  %>
-    <%= link_to 'Emprestimo', books_available_index_path, class:"btn btn-success text-white" %> |
-    <%= link_to 'Voltar', books_available_index_path, class:"btn btn-primary text-white" %>
-  <% end %>  
+  <%= link_to 'Editar', edit_book_path(@book), class:"btn btn-warning text-white" %> |
+  <%= link_to 'Voltar', books_path, class:"btn btn-primary text-white" %>  
 </div>
