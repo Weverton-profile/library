@@ -1,0 +1,19 @@
+<div class="container mt-5">
+    <h1 class="text-center pt-5">Livros para Empréstimo</h1>
+
+    <div class="row">
+        <% @books.each do |book| %>
+            <div class="col-sm-4">
+                <div class="card m-3" style="width: 18rem;">
+                    <%= image_tag book.url_image, width: 30, height: 300,  class:"card-img-top" %>
+                    <%# <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card"> %>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= book.book_name %></h5>
+                        <p class="card-text"><%= book.rating %></p>
+                        <a href="#" class="btn btn-success text-white">Emprestimo</a>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

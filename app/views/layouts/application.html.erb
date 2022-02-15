@@ -22,14 +22,16 @@
       <div class="collapse navbar-collapse d-flex flex-row-reverse mx-3" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link text-white" href="#">Livros disponiveis</a>
+            <%= link_to 'Livros disponiveis', books_available_index_path, class:"nav-link text-white" %>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" href="#">Perfil</a>
           </li>
           <li class="nav-item">
             <%= link_to 'Sobre', about_index_path, class:"nav-link text-white" %>
-          <%# <a class="nav-link text-white" href="about/index">Sobre</a> %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Editar livros (Admin)', books_path, class:"nav-link text-white" %>
           </li>
           <li class="nav-item btn-l btn-danger rounded">
             <a class="nav-link text-white" href="#">Sair</a>

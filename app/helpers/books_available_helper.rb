@@ -1,0 +1,2 @@
+module BooksAvailableHelper
+end
