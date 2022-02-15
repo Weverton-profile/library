@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :students
   devise_for :admins
-  get 'books_available/index'
+  namespace :books_available do
+    get 'index'
+    get 'show_book'
+  end
   get 'about/index'
   get 'welcome/index'
   resources :books
