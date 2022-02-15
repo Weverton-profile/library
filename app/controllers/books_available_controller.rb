@@ -1,4 +1,4 @@
-class BooksAvailableController < BooksController
+class BooksAvailableController < ApplicationController
   def index
   end
 

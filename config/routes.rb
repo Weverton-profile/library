@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :students
+  devise_for :admins
   get 'books_available/index'
   get 'about/index'
   get 'welcome/index'
