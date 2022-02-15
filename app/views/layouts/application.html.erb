@@ -21,9 +21,11 @@
 
       <div class="collapse navbar-collapse d-flex flex-row-reverse mx-3" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <%= link_to 'Livros disponiveis', books_available_index_path, class:"nav-link text-white" %>
-          </li>
+          <% if student_signed_in? %>
+            <li class="nav-item active">
+              <%= link_to 'Livros disponiveis', books_available_index_path, class:"nav-link text-white" %>
+            </li>
+          <% end %>       
           <% if student_signed_in? or admin_signed_in?  %>
             <li class="nav-item">
               <a class="nav-link text-white" href="#">Perfil</a>

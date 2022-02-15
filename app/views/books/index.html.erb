@@ -29,6 +29,10 @@
     </tbody>
   </table>
 
+  <div class="text-center">
+    <%= paginate @books %>
+  </div>
+
   <br>
 
   <%= link_to 'Adicionar Novo Livro', new_book_path, class:"btn btn-success text-white mb-2"%>

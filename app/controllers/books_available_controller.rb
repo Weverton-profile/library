@@ -4,6 +4,6 @@ class BooksAvailableController < ApplicationController
   end
 
   def index
-    @books = Book.all
+    @books = Book.all.page(params[:page]).per(9)
   end
 end
