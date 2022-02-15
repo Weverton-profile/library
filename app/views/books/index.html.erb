@@ -10,7 +10,6 @@
           <th>Nome</th>
           <th>Descrição</th>
           <th>Imagem</th>
-          <th>Nota</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -21,7 +20,6 @@
             <td><%= book.book_name %></td>
             <td><%= book.description %></td>
             <td><%= image_tag book.url_image, width: 80, height: 100 %></td>
-            <td><%= book.rating %></td>
             <td><%= link_to 'Mostrar', book, class:"btn btn-primary text-white" %></td>
             <td><%= link_to 'Editar', edit_book_path(book), class:"btn btn-warning text-white" %></td>
             <td><%= link_to 'Apagar', book, class:"btn btn-danger text-white", method: :delete, data: { confirm: 'Are you sure?' } %></td>

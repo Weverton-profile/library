@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :loans
   devise_for :students
   devise_for :admins
   get 'books_available/index'
