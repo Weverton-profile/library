@@ -3,9 +3,19 @@
     <div class="container">
         <h1 class="display-4 pt-5 text-center">Seja Bem-vindo a sua biblioteca virtual!</h1>
         <h1 class="display-3 text-center"><%= image_tag "logo.png" %> Digital Book</h1>
-        <div class="text-center">
-            <span class="text-center"><%= link_to 'Login', student_session_path, class:"btn btn-success btn-lg text-white" %></span> ou
-            <span class="text-center"><%= link_to 'Inscrever-se', new_student_registration_path	, class:"btn btn-success btn-lg text-white" %></span>
-        </div>
+        <% if student_signed_in? or admin_signed_in?  %>
+            <p class="pt-5 text-center">obrigado por usar nossa biblioteca 
+            <% if student_signed_in? %>
+                <%= current_student.email %>
+            <% else %>
+                <%= current_admin.email %>
+            <% end %>
+            </p>
+        <% else %>
+            <div class="text-center">
+                <span class="text-center"><%= link_to 'Login', student_session_path, class:"btn btn-success btn-lg text-white" %></span> ou
+                <span class="text-center"><%= link_to 'Inscrever-se', new_student_registration_path	, class:"btn btn-success btn-lg text-white" %></span>
+            </div>        
+        <% end %>
     </div>
 </div>

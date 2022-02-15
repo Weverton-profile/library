@@ -24,18 +24,28 @@
           <li class="nav-item active">
             <%= link_to 'Livros disponiveis', books_available_index_path, class:"nav-link text-white" %>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#">Perfil</a>
-          </li>
+          <% if student_signed_in? or admin_signed_in?  %>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Perfil</a>
+            </li>
+          <% end %>
           <li class="nav-item">
             <%= link_to 'Sobre', about_index_path, class:"nav-link text-white" %>
           </li>
-          <li class="nav-item">
-            <%= link_to 'Editar livros (Admin)', books_path, class:"nav-link text-white" %>
-          </li>
-          <li class="nav-item btn-l btn-danger rounded">
-            <a class="nav-link text-white" href="#">Sair</a>
-          </li>
+          <% if admin_signed_in?  %>
+            <li class="nav-item">
+              <%= link_to 'Editar livros (Admin)', books_path, class:"nav-link text-white" %>
+            </li>
+          <% end %>
+          <% if student_signed_in? or admin_signed_in?  %>
+            <li class="nav-item btn-l btn-danger rounded">
+              <%= link_to 'Sair', destroy_admin_session_path, method: :delete, class:"nav-link text-white" %>
+            </li>
+          <% else %>
+            <li class="nav-item btn-l btn-success rounded">
+              <%= link_to 'Login', student_session_path, class:"nav-link text-white" %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </nav>

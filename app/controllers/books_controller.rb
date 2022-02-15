@@ -3,6 +3,7 @@ class BooksController < ApplicationController
   layout "application"
   # GET /books or /books.json
   def index
+    before_action :authenticate_admin!
     @books = Book.all
   end
 
@@ -12,11 +13,13 @@ class BooksController < ApplicationController
 
   # GET /books/new
   def new
+    before_action :authenticate_admin!
     @book = Book.new
   end
 
   # GET /books/1/edit
   def edit
+    before_action :authenticate_admin!
   end
 
   # POST /books or /books.json
