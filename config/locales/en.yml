@@ -30,4 +30,17 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  edit: "Edit"
+  show: "Show"
+  delete: "Delete"
+  add_new_book: "Add new book"
+  logout: "Log out"
+  login: "Log in"
+  signup: "Sign up"
+  edit_book: "Edit Book"
+  about: "About"
+  profile: "Profile"
+  loan: "Loan"
+  details: "Details"
+  return: "Return Book"
+  books_available: "Books Available"

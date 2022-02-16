@@ -13,8 +13,8 @@
             </p>
         <% else %>
             <div class="text-center">
-                <span class="text-center"><%= link_to 'Login', student_session_path, class:"btn btn-success btn-lg text-white" %></span> ou
-                <span class="text-center"><%= link_to 'Inscrever-se', new_student_registration_path	, class:"btn btn-success btn-lg text-white" %></span>
+                <span class="text-center"><%= link_to t("login"), student_session_path, class:"btn btn-success btn-lg text-white" %></span> ou
+                <span class="text-center"><%= link_to t("singup"), new_student_registration_path	, class:"btn btn-success btn-lg text-white" %></span>
             </div>        
         <% end %>
     </div>

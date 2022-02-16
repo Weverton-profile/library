@@ -31,7 +31,7 @@
                                 <%= image_tag book.url_image, width: 30, height: 300,  class:"card-img-top" %>
                                 <div class="card-body">
                                     <h5 class="card-title"><%= book.book_name %></h5>
-                                    <%= link_to 'Devolver livro', loan, class:"btn btn-danger text-white", method: :delete, data: { confirm: 'Are you sure?' } %>
+                                    <%= link_to t("return"), loan, class:"btn btn-danger text-white", method: :delete, data: { confirm: 'Are you sure?' } %>
                                 </div>
                             </div>
                         </div>

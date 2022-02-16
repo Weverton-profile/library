@@ -16,8 +16,8 @@
                         <%= image_tag book.url_image, width: 30, height: 300,  class:"card-img-top" %>
                         <div class="card-body">
                             <h5 class="card-title"><%= book.book_name %></h5>
-                            <%= button_to "Emprestimo", loans_path(:student_id => current_student.id, :book_id => book.id), method: :post, class:"btn btn-success mb-2 text-white" %>
-                            <%= link_to 'Detalhes', "/show_book/show/#{book.id}", class:"btn btn-success text-white" %>
+                            <%= button_to t("loan"), loans_path(:student_id => current_student.id, :book_id => book.id), method: :post, class:"btn btn-success mb-2 text-white" %>
+                            <%= link_to t("details"), "/show_book/show/#{book.id}", class:"btn btn-success text-white" %>
                         </div>
                     </div>
                 </div>
