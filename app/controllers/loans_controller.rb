@@ -20,7 +20,7 @@ class LoansController < ApplicationController
 
     def destroy
         @loan.destroy
-        redirect_to profile_index_path, notice: "Livro devolvido"
+        redirect_to books_available_index_path, notice: "Livro devolvido"
     end
     private
     # Use callbacks to share common setup or constraints between actions.
@@ -30,6 +30,6 @@ class LoansController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def loan_params
-        params.require(:loan)
+        params.require(:loan).permit(:student_id, :book_id)
     end
 end
