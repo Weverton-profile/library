@@ -18,15 +18,20 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse d-flex flex-row-reverse mx-3" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to t("Português-BR"), "/?locale=pt-BR", class:"nav-link text-white" %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to t("English"), "/?locale=en", class:"nav-link text-white" %>
+          </li>
           <% if student_signed_in? %>
             <li class="nav-item active">
               <%= link_to t("books_available"), books_available_index_path, class:"nav-link text-white" %>
             </li>
           <% end %>       
-          <% if student_signed_in? or admin_signed_in?  %>
+          <% if student_signed_in?  %>
             <li class="nav-item">
               <%= link_to t("profile"), profile_index_path, class:"nav-link text-white" %>
             </li>
