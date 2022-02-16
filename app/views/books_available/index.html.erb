@@ -1,15 +1,19 @@
 <div class="container mt-5">
     <h1 class="text-center pt-5">Livros para Empréstimo</h1>
-
+    <% loan = @oan %>
     <div class="row">
         <% @books.each do |book| %>
             <div class="col-sm-4">
                 <div class="card m-3" style="width: 18rem;">
                     <%= image_tag book.url_image, width: 30, height: 300,  class:"card-img-top" %>
-                    <%# <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card"> %>
                     <div class="card-body">
                         <h5 class="card-title"><%= book.book_name %></h5>
-                        <a href="#" class="btn btn-success text-white">Emprestimo</a>
+                        <% if Loan.exists?(book.id) %>
+                            <%= link_to 'Ja esta emprestado', new_loan_path(book), class:"btn btn-success text-white" %>
+                        <% else %>
+                            <%= button_to "New", loans_path(@loan), params: {:student_id => current_student.id, :book_id => book.id,} %>
+                            <%#<%= link_to 'Emprestimo', new_loan_path(book), class:"btn btn-success text-white" %>                        
+                        <% end %>   
                         <%= link_to 'Detalhes', "/show_book/show/#{book.id}", class:"btn btn-success text-white" %>
                     </div>
                 </div>

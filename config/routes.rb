@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'profile/index'
   get 'show_book/show/:id', to: 'show_book#show'
   resources :loans
   devise_for :students

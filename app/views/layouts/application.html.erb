@@ -28,7 +28,7 @@
           <% end %>       
           <% if student_signed_in? or admin_signed_in?  %>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#">Perfil</a>
+              <%= link_to 'Perfil', profile_index_path, class:"nav-link text-white" %>
             </li>
           <% end %>
           <li class="nav-item">

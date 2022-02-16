@@ -1,0 +1,43 @@
+<section class="jumbotron text-center mt-5">
+    <div class="container pt-5">
+        <h1 class="jumbotron-heading pt-5">Perfil de 
+        <% if student_signed_in? %>
+            Aluno
+        <% end %>
+        <% if admin_signed_in? %>
+            Administrador
+        <% end %>
+        </h1>
+        <p class="lead text-muted">Atualmente logado em 
+        <% if student_signed_in? %>
+            <%= current_student.email %>
+        <% end %>
+        <% if admin_signed_in? %>
+            <%= current_admin.email %>
+        <% end %>          
+        </p>
+    </div>
+</section>
+<h3 class="jumbotron-heading pt-5 text-center">Seus emprestimos</h3>
+<div class="container mt-5">
+
+    <div class="row">
+        <% @books.each do |book| %>
+            <% @loan.each do |loan| %>
+                <% if loan.student_id == current_student.id %>
+                    <% if loan.book_id == book.id %>
+                        <div class="col-sm-4">
+                            <div class="card m-3" style="width: 18rem;">
+                                <%= image_tag book.url_image, width: 30, height: 300,  class:"card-img-top" %>
+                                <div class="card-body">
+                                    <h5 class="card-title"><%= book.book_name %></h5>
+                                    <%= link_to 'Devolver livro', loan, class:"btn btn-danger text-white", method: :delete, data: { confirm: 'Are you sure?' } %>
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>
+                <% end %>
+            <% end %>
+        <% end %>
+    </div>
+</div>

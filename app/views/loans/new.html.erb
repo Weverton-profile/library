@@ -1,0 +1,31 @@
+<div class="container mt-5 text-center">
+    <h1 class="text-center pt-5">Livros para Empréstimo</h1>
+    <%= form_with(model: @loan) do |form| %>
+    <% if @loan.errors.any? %>
+        <div id="error_explanation">
+        <h2><%= pluralize(@loan.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+        <ul>
+            <% @loan.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+            <% end %>
+        </ul>
+        </div>
+    <% end %>
+
+    <div class="field mt-2">
+        <%= form.label :id_do_aluno %>
+        <%= form.text_field :student_id %>
+    </div>
+
+    <div class="field mt-2">
+        <%= form.label :id_do_livro %>
+        <%= form.text_field :book_id %>
+    </div>
+
+    <div class="actions mt-2">
+        <%= form.submit %>
+    </div>
+    <% end %>
+    <%= link_to 'Detalhes', loans_path, class:"btn btn-success text-white" %>
+</div>
