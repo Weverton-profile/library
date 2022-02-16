@@ -2,6 +2,7 @@
     <h1 class="text-center pt-5">Livros para Empréstimo</h1>
     <div class="row">
         <% for book in @books do %>
+            <% @loan_made = false %>
             <% for loan in @loan do %>
                 <% if loan.book_id == book.id %>
                     <% @loan_made = true %>
@@ -15,8 +16,7 @@
                         <%= image_tag book.url_image, width: 30, height: 300,  class:"card-img-top" %>
                         <div class="card-body">
                             <h5 class="card-title"><%= book.book_name %></h5>
-                            <%#<%= button_to "New", loans_path, params: { student_id: current_student.id, book_id: book.id  } %>
-                            <%= link_to 'Emprestimo', new_loan_path(book), class:"btn btn-success text-white" %>
+                            <%= button_to "Emprestimo", loans_path(:student_id => current_student.id, :book_id => book.id), method: :post, class:"btn btn-success mb-2 text-white" %>
                             <%= link_to 'Detalhes', "/show_book/show/#{book.id}", class:"btn btn-success text-white" %>
                         </div>
                     </div>

@@ -30,6 +30,6 @@ class LoansController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def loan_params
-        params.require(:loan).permit(:student_id, :book_id)
+        params.permit(:student_id, :book_id)
     end
 end
